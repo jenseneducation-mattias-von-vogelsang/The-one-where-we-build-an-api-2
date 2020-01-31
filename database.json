@@ -1,0 +1,41 @@
+{
+  "products": [
+    {
+      "name": "GPhone",
+      "price": "10,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Paystation",
+      "price": "3,500",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "XBLOX",
+      "price": "3,200",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Nintendont",
+      "price": "4,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Samsing",
+      "price": "10,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    }
+  ],
+  "shoppingCart": [
+    {
+      "name": "Samsing",
+      "price": "10,000",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "name": "Paystation",
+      "price": "3,500",
+      "imgURL": "https://placeimg.com/640/480/tech"
+    }
+  ]
+}
