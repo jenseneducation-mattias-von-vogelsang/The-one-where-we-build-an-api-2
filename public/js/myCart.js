@@ -1,10 +1,14 @@
+/*** IMPORTS ***/
 const showCart = document.querySelector(".displayCart");
-import { getCartFull, removeFromCart } from "./cartOperations.js";
+import { getCart, removeFromCart } from "./cartOperations.js";
+const button = true;
 
+/*** LOAD CART ON WINDOW LOAD ***/
 window.onload = function() {
-  getCartFull();
+  getCart(button);
 };
 
+/*** CREATE HTML ELEMENTS WITH DATA FROM API ***/
 export const displayCartRemove = cartProducts => {
   for (let i = 0; i < cartProducts.length; i++) {
     let productWrapper = document.createElement("article");
@@ -27,6 +31,7 @@ export const displayCartRemove = cartProducts => {
     productWrapper.append(removeFromCartBtn);
     productWrapper.append(productIMG);
 
+    /*** REFRESH PAGE AFTER CLICKING BUTTON AND REMOVING PRODUCT ***/
     removeFromCartBtn.addEventListener("click", () => {
       removeFromCart(productName.value);
       window.location.reload();

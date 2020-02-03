@@ -1,26 +1,20 @@
+/*** IMPORTS ***/
 const baseURL = "http://localhost:8000/";
 import { displayCart } from "./index.js";
 import { displayCartRemove } from "./myCart.js";
 
-export const getCart = () => {
+/*** ALL FUNCTIONS WITH FETCH ***/
+export const getCart = buttonDecider => {
   fetch(baseURL + "cart", { method: "GET" })
     .then(response => {
       return response.json();
     })
     .then(data => {
       console.log(data);
+      if (buttonDecider) {
+        displayCartRemove(data);
+      }
       displayCart(data);
-    });
-};
-
-export const getCartFull = () => {
-  fetch(baseURL + "cart", { method: "GET" })
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      displayCartRemove(data);
     });
 };
 
@@ -74,7 +68,6 @@ export const removeFromCart = productName => {
       alert(data.message);
 
       if (data.data !== "unidentified") {
-        //clearCart();
         displayCartRemove(data);
       }
     });

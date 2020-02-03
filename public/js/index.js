@@ -1,13 +1,16 @@
+/*** IMPORTS ***/
 const showProducts = document.querySelector(".displayProducts");
 const miniCart = document.querySelector(".miniCart");
 import { getProducts } from "./productOperations.js";
 import { getCart, addToCart } from "./cartOperations.js";
 
+/*** LOAD CART ON WINDOW LOAD ***/
 window.onload = function() {
   getProducts();
   getCart();
 };
 
+/*** DISPLAY DATA RETRIEVED FROM API IN HTML ***/
 export const displayProducts = products => {
   for (let i = 0; i < products.length; i++) {
     let productWrapper = document.createElement("article");
@@ -30,6 +33,7 @@ export const displayProducts = products => {
     productWrapper.append(addToCartBtn);
     productWrapper.append(productIMG);
 
+    /*** REFRESH PAGE AFTER CLICKING BUTTON AND ADDING PRODUCT ***/
     addToCartBtn.addEventListener("click", () => {
       addToCart(productName.value);
       window.location.reload();
@@ -37,6 +41,7 @@ export const displayProducts = products => {
   }
 };
 
+/*** DISPLAY CART WITHOUT THE REMOVE BUTTON ***/
 export const displayCart = cartProducts => {
   for (let i = 0; i < cartProducts.length; i++) {
     let productWrapper = document.createElement("article");
