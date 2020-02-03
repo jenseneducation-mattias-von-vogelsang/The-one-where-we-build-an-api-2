@@ -1,7 +1,7 @@
 /*** IMPORTS ***/
 const baseURL = "http://localhost:8000/";
 import { displayCart } from "./index.js";
-import { displayCartRemove } from "./myCart.js";
+import { displayCartWithBtn } from "./myCart.js";
 
 /*** ALL FUNCTIONS WITH FETCH ***/
 export const getCart = buttonDecider => {
@@ -12,7 +12,7 @@ export const getCart = buttonDecider => {
     .then(data => {
       console.log(data);
       if (buttonDecider) {
-        displayCartRemove(data);
+        displayCartWithBtn(data);
       }
       displayCart(data);
     });

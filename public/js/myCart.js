@@ -9,7 +9,7 @@ window.onload = function() {
 };
 
 /*** CREATE HTML ELEMENTS WITH DATA FROM API ***/
-export const displayCartRemove = cartProducts => {
+export const displayCartWithBtn = cartProducts => {
   for (let i = 0; i < cartProducts.length; i++) {
     let productWrapper = document.createElement("article");
     let removeFromCartBtn = document.createElement("button");

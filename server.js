@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/myCart", (req, res) => {
-  res.sendFile("myCart.html");
+  res.sendFile("public/myCart.html", { root: __dirname });
 });
 
 app.get("/products", async (req, res) => {
